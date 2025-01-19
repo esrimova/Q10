@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q10 Demo</title>
+    <link rel="stylesheet" href="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/themes/df-messenger-default.css">
+    <script src="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/df-messenger.js"></script>
+    <style>
+        /* Estilo general */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: url('q10_screenshot.jpg') no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        /* Estilo del chatbot */
+        df-messenger {
+            z-index: 999;
+            position: fixed;
+            --df-messenger-font-color: #000;
+            --df-messenger-font-family: Google Sans;
+            --df-messenger-chat-background: #f3f6fc;
+            --df-messenger-message-user-background: #d3e3fd;
+            --df-messenger-message-bot-background: #fff;
+            bottom: 16px;
+            right: 16px;
+        }
+
+        /* Media query para pantallas pequeñas */
+        @media (max-width: 768px) {
+            body {
+                background-size: contain; /* Ajustar la imagen de fondo en pantallas pequeñas */
+            }
+            df-messenger {
+                bottom: 8px; /* Reduce la distancia del borde inferior */
+                right: 8px;  /* Reduce la distancia del borde derecho */
+                width: 280px; /* Ajusta el ancho del chatbot */
+                height: 400px; /* Ajusta la altura del chatbot */
+            }
+        }
+
+        /* Media query para pantallas muy pequeñas (como móviles) */
+        @media (max-width: 480px) {
+            df-messenger {
+                bottom: 8px;
+                right: 8px;
+                width: 240px; /* Tamaño más compacto para pantallas pequeñas */
+                height: 360px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <df-messenger
+        location="us-east1"
+        project-id="q10-bot"
+        agent-id="77de6bc6-3b5a-4478-b03f-0fbd3cf39fdd"
+        language-code="es"
+        max-query-length="-1">
+        <df-messenger-chat-bubble chat-title="Q10"></df-messenger-chat-bubble>
+    </df-messenger>
+</body>
+</html>
